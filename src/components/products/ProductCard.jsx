@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="mx-auto max-w-5xl"
+      className="mx-auto max-w-4xl"
     >
       <Tilt
         glareEnable
@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
                 KING
               </h2>
 
-              <p className="mt-6 max-w-xl text-base leading-7 text-zinc-400">
+              <p className="mt-6 hidden max-w-xl text-base leading-7 text-zinc-400 md:block">
                 Premium oversized t-shirt featuring the iconic KING artwork.
                 Crafted for bold personalities, creators, leaders and
                 trendsetters who aren't afraid to stand out.

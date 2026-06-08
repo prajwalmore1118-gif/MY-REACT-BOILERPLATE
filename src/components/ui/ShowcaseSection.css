@@ -9,7 +9,6 @@ html {
 .mira-showcase {
   position: relative;
   width: 100%;
-  height: calc(100svh + ((var(--items-count) - 1) * 100svh));
   background:
     radial-gradient(
       circle at 75% 35%,

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Counter from "./Counter";
 import ImageStack from "./ImageStack";
 import { useLoaderProgress } from "../../hooks/useLoaderProgress";
+import logoBorderPng from "../../assets/king/logoBorderPng.png";
 
 // import logo from "../../assets/king/Celeb.png";
 
@@ -50,23 +51,29 @@ const Loader = ({ onComplete }) => {
       {/* Center content */}
       <div className="absolute inset-0 flex items-center justify-center">
         {/* Big background text */}
-        <motion.h1
-          className="absolute z-[80] text-[100px] md:text-[220px] font-black tracking-tighter select-none"
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: progress > 30 ? 1 : 0,
-          }}
-          style={{
-            color: "transparent",
-            WebkitTextStroke: "3px #ffffff",
-          }}
-        >
-          CELEB
-        </motion.h1>
+        <div className="absolute inset-0 flex items-center justify-center">
+          {/* Background Logo */}
+          <motion.img
+            src={logoBorderPng} // import your image
+            alt="CELEPS"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: progress > 30 ? 0.8 : 0,
+            }}
+            transition={{ duration: 0.4 }}
+            className="absolute z-[10] select-none pointer-events-none"
+            style={{
+              width: "clamp(400px, 80vw, 1200px)",
+              filter: "brightness(0) invert(1)",
+            }}
+          />
+
+          {/* Image stack */}
+          <ImageStack progress={progress} />
+        </div>
 
         {/* Image stack */}
         <ImageStack progress={progress} />
-
       </div>
     </motion.div>
   );
